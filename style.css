@@ -1,0 +1,503 @@
+html,
+body {
+  background: #3e505e;
+  margin: 0;
+  padding: 0;
+}
+
+.w {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.w-body {
+  animation: 1.3s ease-in-out infinite alternate bodyStep;
+  background-color: #eb486b;
+  border-radius: 50%;
+  height: 160px;
+  overflow: hidden;
+  margin: -80px 0 0 -80px;
+  position: absolute;
+  text-align: center;
+  width: 160px;
+  white-space: nowrap;
+}
+
+  .w-body-skin,
+  .w-body-skin::before,
+  .w-body-skin::after {
+    background-color: #e7ddb6;
+    border-radius: 50%;
+    display: block;
+    height: 85px;
+    width: 85px;
+  }
+  .w-body-skin {
+    animation: 0.07s ease-in-out infinite alternate skinShake;
+    margin: -20px auto 0;
+  }
+    .w-body-skin::before,
+    .w-body-skin::after {
+      border-radius: 0 0 50% 50%;
+      content: '';
+      transform: translateY(20px);
+    }
+    .w-body-skin::before {
+      margin-left: -90px;
+    }
+    .w-body-skin::after {
+      margin: -85px 0 0 90px;
+    }
+
+  .w-body-nipples,
+  .w-body-nipples::after {
+    background-color: #f5978e;
+    border-radius: 50%;
+    display: block;
+    height: 10px;
+    position: relative;
+    width: 10px;
+  }
+    .w-body-nipples::after {
+      content: '';
+      margin-left: 56px;
+      transform: translateY(0);
+    }
+  .w-body-nipples {
+    animation: 0.07s ease-in-out infinite alternate nipplesShake;
+  }
+
+  .w-head,
+  .w-head::before {
+    background-color: #e7ddb6;
+    display: block;
+    height: 30px;
+    margin: -106px 0 0 -17px;
+    position: absolute;
+    width: 34px;
+    z-index: 1;
+  }
+    .w-head {
+      animation: 1.3s ease-in-out infinite alternate bodyStep;
+    }
+    .w-head::before {
+      background-color: #eb486b;
+      border-radius: 50% 50% 0 0;
+      content: '';
+      height: 40px;
+      margin: -27px 0 0;
+    }
+
+  .w-eye {
+    background-color: #772436;
+    border: 2px solid #e7ddb6;
+    border-radius: 0 8px 6px 70%;
+    display: block;
+    height: 8px;
+    margin: -11px 0 0 1px;
+    position: absolute;
+    width: 11px;
+    z-index: 1;
+  }
+    .w-eye::after {
+      background-color: #e7ddb6;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: 5px;
+      margin: 1px 0 0 4px;
+      width: 5px;
+    }
+    .w-eye_right {
+      margin-left: 18px;
+      transform: scaleX(-1);
+    }
+
+  .w-arm {
+    animation: 1.3s ease-in-out infinite alternate bodyStep;
+    margin: -63px 0 0 -80px;
+    position: absolute;
+  }
+    .w-arm_right {
+      animation: 1.3s ease-in-out infinite alternate bodyStepMirror;
+      margin-left: 80px;
+    }
+    .w-arm::before {
+      animation: 0.07s ease-in-out infinite alternate armShake;
+      border-radius: 30px 30px 0 0;
+      background-color: #d8cca7;
+      content: '';
+      height: 80px;
+      margin: -10px 0 0 -22px;
+      position: absolute;
+      transform: rotate(31deg);
+      transform-origin: bottom;
+      width: 50px;
+    }
+    .w-arm_right::before {
+      animation-delay: 0.07s;
+    }
+    .w-arm::after {
+      content: '';
+      background-color: #e7ddb6;
+      border-radius: 3px 0 30px 30px;
+      height: 85px;
+      margin: 54px 0 0 -55px;
+      position: absolute;
+      transform: rotate(49deg);
+      width: 50px;
+    }
+
+  .w-leg {
+    animation: 1.3s ease-in infinite alternate legShift;
+    margin: 49px 0 0 -52px;
+    position: absolute;
+  }
+    .w-leg-top {
+      animation: 1.3s ease-in infinite alternate legTop;
+      background-color: #e7ddb6;
+      height: 50px;
+      position: absolute;
+      width: 45px;
+    }
+    .w-leg-bottom {
+      animation: 1.3s ease-in infinite alternate legBottom;
+      background-color: #eb486b;
+      height: 70px;
+      margin: 40px 0 0 0px;
+      position: absolute;
+      width: 45px;
+    }
+    .w-leg-bottom::before {
+      animation: 1.3s ease-in infinite alternate bootsBackground;
+      background-color: #eb486b;
+      border-radius: 50% 0 0 0;
+      content: '';
+      height: 10px;
+      margin: 60px 0 0 -20px;
+      position: absolute;
+      width: 20px;
+    }
+    .w-leg_right {
+      animation: 1.3s ease-in -1.3s infinite alternate legShiftScale;
+      margin-left: 52px;
+      transform: scaleX(-1);
+    }
+      .w-leg_right .w-leg-top,
+      .w-leg_right .w-leg-bottom,
+      .w-leg_right .w-leg-bottom::before {
+        animation-delay: 1.3s;
+      }
+
+.w-shoelace,
+.w-shoelace::after {
+  background-color: yellow;
+  border-radius: 2px;
+  height: 2px;
+  margin: 15px 0 0 1px;
+  transform: rotate(45deg);
+  width: 12px;
+}
+  .w-shoelace::after {
+    content: '';
+    margin: 0;
+    position:absolute;
+    transform: rotate(90deg);
+  }
+.w-heel {
+  bottom: 0;
+  height: 20px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 20px;
+}
+  .w-heel::after {
+    background-color: yellow;
+    border-radius: 50%;
+    content: '';
+    height: 40px;
+    position: absolute;
+    width: 40px;
+  }
+@keyframes legShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(0, -20px);
+  }
+  90% {
+    transform: translate(20px, 0);
+  }
+  100% {
+    transform: translate(20px, 0);
+  }
+}
+
+@keyframes legShiftScale {
+  0% {
+    transform: translate(0, 0) scaleX(-1);
+    z-index: 0;
+  }
+  50% {
+    transform: translate(0, 0) scaleX(-1);
+    z-index: 0;
+  }
+  75% {
+    transform: translate(0, -20px) scaleX(-1);
+    z-index: 0;
+  }
+  90% {
+    transform: translate(-20px, 0) scaleX(-1);
+    z-index: -1;
+  }
+  100% {
+    transform: translate(-20px, 0) scaleX(-1);
+    z-index: -1;
+  }
+}
+
+@keyframes legTop {
+  0% {
+    background-color: #e7ddb6;
+    transform: rotate(0deg);
+  }
+  50% {
+    background-color: #e7ddb6;
+    transform: rotate(0deg);
+  }
+  75% {
+    background-color: #e7ddb6;
+    transform: rotate(30deg);
+  }
+  90% {
+    background-color: #b8b092;
+    transform: rotate(0deg);
+  }
+  100% {
+    background-color: #b8b092;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes legBottom {
+  0% {
+    background-color: #eb486b;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  50% {
+    background-color: #eb486b;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  75% {
+    background-color: #eb486b;
+    transform: translate(0px, -15px) rotate(-20deg);
+  }
+  90% {
+    background-color: #ba3b56;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+  100% {
+    background-color: #ba3b56;
+    transform: translate(0, 0)  rotate(0deg);
+  }
+}
+
+@keyframes bootsBackground {
+  0% {
+    background-color: #eb486b;
+  }
+  75% {
+    background-color: #eb486b;
+  }
+  90% {
+    background-color: #ba3b56;
+  }
+  100% {
+    background-color: #ba3b56;
+  }
+}
+
+@keyframes bodyStep {
+  0% {
+    transform: translate3d(-22px, 0, 0);
+  }
+  2% {
+    transform: translate3d(-22px, 0, 0);
+  }
+  25% {
+    transform: translate3d(-11px, -15px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(11px, -15px, 0);
+  }
+  98% {
+    transform: translate3d(22px, 0, 0);
+  }
+  100% {
+    transform: translate3d(22px, 0, 0);
+  }
+}
+
+@keyframes bodyStepMirror {
+  0% {
+    transform: translate3d(-22px, 0, 0) scaleX(-1);
+  }
+  25% {
+    transform: translate3d(-11px, -15px, 0) scaleX(-1);
+  }
+  50% {
+    transform: translate3d(0, 0, 0) scaleX(-1);
+  }
+  75% {
+    transform: translate3d(11px, -15px, 0) scaleX(-1);
+  }
+  100% {
+    transform: translate3d(22px, 0, 0) scaleX(-1);
+  }
+}
+
+@keyframes skinShake {
+  from {
+    transform: translateX(-3px);
+  }
+  to {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes nipplesShake {
+  from {
+    transform: translate(44px, -25px);
+  }
+  to {
+    transform: translate(50px, -25px);
+  }
+}
+
+@keyframes armShake {
+  from {
+    transform: rotate(28deg);
+  }
+  to {
+    transform: rotate(32deg);
+  }
+}
+.LinkedIn,
+.LinkedIn:visited {
+  bottom: .25em;
+  color: #e7ddb6;
+  position: absolute;
+  right: .25em;
+}
+.LinkedIn:hover {
+  color: white;
+}
+
+
+@import "https://fonts.googleapis.com/css?family=Salsa|Pacifico";
+:root {
+  --spread: .5em;
+  --shift: .01em;
+  --base: #4d70c7;
+  --c1: #21c2f5;
+  --c2: #9c63c7;
+}
+
+@-webkit-keyframes flicker1 {
+  95% {
+    text-shadow: 0 0 0.05em var(--c1), 0 0 0.1em var(--base), calc(var(--shift) * 1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * 1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), 0 0 var(--spread) var(--base), 0 0 calc(var(--spread) / 1.5) var(--base);
+  }
+  98% {
+    text-shadow: 0 0 0.05em var(--c1), 0 0 0.1em var(--c2), calc(var(--shift) * 1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * 1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), 0 0 0 var(--base), 0 0 0 var(--base);
+  }
+}
+
+@keyframes flicker1 {
+  95% {
+    text-shadow: 0 0 0.05em var(--c1), 0 0 0.1em var(--base), calc(var(--shift) * 1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * 1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), 0 0 var(--spread) var(--base), 0 0 calc(var(--spread) / 1.5) var(--base);
+  }
+  98% {
+    text-shadow: 0 0 0.05em var(--c1), 0 0 0.1em var(--c2), calc(var(--shift) * 1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * 1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), 0 0 0 var(--base), 0 0 0 var(--base);
+  }
+}
+@-webkit-keyframes flicker2 {
+  90% {
+    opacity: .1;
+    text-shadow: 0 0 0.05em var(--c1), 0 0 0.1em var(--c2), calc(var(--shift) * 1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * 1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), 0 0 0 var(--base), 0 0 0 var(--base);
+  }
+}
+@keyframes flicker2 {
+  90% {
+    opacity: .1;
+    text-shadow: 0 0 0.05em var(--c1), 0 0 0.1em var(--c2), calc(var(--shift) * 1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * 1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), 0 0 0 var(--base), 0 0 0 var(--base);
+  }
+}
+body {
+  font-family: 'Salsa', sans-serif;
+}
+
+h3 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 100;
+  margin: 0 0 .2em 0;
+  font-size: 5em;
+  letter-spacing: -.01em;
+  -webkit-transform: rotate(-12deg);
+          transform: rotate(-12deg);
+  color: transparent;
+  text-shadow: 0 0 0.05em var(--c1), 0 0 0.1em var(--base), calc(var(--shift) * 1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * 1) calc(var(--shift) * -1) calc(var(--spread) / 50) var(--c1), calc(var(--shift) * -1) calc(var(--shift) * 1) calc(var(--spread) / 50) var(--c1), 0 0 var(--spread) var(--base), 0 0 calc(var(--spread) / 1.5) var(--base);
+}
+h3 span:nth-child(1) {
+  -webkit-animation: flicker1 1s infinite alternate ease-in-out;
+          animation: flicker1 1s infinite alternate ease-in-out;
+}
+h3 span:nth-child(2) {
+  -webkit-animation: flicker1 1.5s infinite alternate ease-in-out;
+          animation: flicker1 1.5s infinite alternate ease-in-out;
+}
+h3 span:nth-child(3) {
+  -webkit-animation: flicker1 .47s infinite alternate ease-in-out;
+          animation: flicker1 .47s infinite alternate ease-in-out;
+}
+h3 span:nth-child(4) {
+  -webkit-animation: flicker2 .1s infinite alternate ease-in-out;
+          animation: flicker2 .1s infinite alternate ease-in-out;
+}
+
+p {
+  margin: 0;
+  -webkit-transform: translateX(10%);
+          transform: translateX(10%);
+}
+
+main {
+  text-align: center;
+  font-size: 4vmin;
+  color: #fff;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background: #232325;
+  background-image: linear-gradient(-20deg, #000 30%, #9c63c7);
+  background-size: 200%;
+  background-position: center center;
+}
